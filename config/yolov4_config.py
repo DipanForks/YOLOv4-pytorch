@@ -19,12 +19,12 @@ TRAIN = {
     "DATA_TYPE": "VOC",  # DATA_TYPE: VOC ,COCO or Customer
     "TRAIN_IMG_SIZE": 416,
     "AUGMENT": True,
-    "BATCH_SIZE": 1,
+    "BATCH_SIZE": 8,
     "MULTI_SCALE_TRAIN": True,
     "IOU_THRESHOLD_LOSS": 0.5,
     "YOLO_EPOCHS": 50,
     "Mobilenet_YOLO_EPOCHS": 120,
-    "NUMBER_WORKERS": 0,
+    "NUMBER_WORKERS": 4,
     "MOMENTUM": 0.9,
     "WEIGHT_DECAY": 0.0005,
     "LR_INIT": 1e-4,
@@ -37,8 +37,8 @@ TRAIN = {
 # val
 VAL = {
     "TEST_IMG_SIZE": 416,
-    "BATCH_SIZE": 1,
-    "NUMBER_WORKERS": 0,
+    "BATCH_SIZE": 8,
+    "NUMBER_WORKERS": 4,
     "CONF_THRESH": 0.005,
     "NMS_THRESH": 0.45,
     "MULTI_SCALE_VAL": False,
