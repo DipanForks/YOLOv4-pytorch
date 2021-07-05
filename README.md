@@ -1,57 +1,15 @@
-[![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
-[![LICENSE](https://img.shields.io/badge/license-Anti%20996-blue.svg)](https://github.com/996icu/996.ICU/blob/master/LICENSE)
-# YOLOv4-pytorch (attentive YOLOv4 and Mobilenetv3 YOLOv4)
+# YOLOv4-pytorch
 
-This is a PyTorch re-implementation of YOLOv4 architecture based on the official darknet implementation [AlexeyAB/darknet](https://github.com/AlexeyAB/darknet) with PASCAL VOC, COCO and Customer dataset
-
-## Results(updating)
-
-| name | train Dataset | test Dataset | test size | mAP | inference time(ms) | params(M) |model link |
-| :----- | :----- | :------ | :----- | :-----| :-----|  :-----|:-----|
-| mobilenetv2-YOLOV4 | VOC trainval(07+12) | VOC test(07) | 416 | 0.851| 11.29 | 46.34 | [args](https://pan.baidu.com/s/10cAzQLHZmPxpHyCsNncV_w) |
-
-## Update!!!
-Mobilenetv3-YOLOv4 is arriving!（You only need to change the MODEL_TYPE in config/yolov4_config.py）
-
-## News!!!
-This repo add some useful attention methods in backbone.The following pictures illustrate such thing:
-
-* SEnet(CVPR 2017)
-
-![SEnet](https://github.com/argusswift/YOLOv4-pytorch/blob/master/data/SEnet.jpg)
-
-* CBAM(CVPR 2018)
-
-![CBAM](https://github.com/argusswift/YOLOv4-pytorch/blob/master/data/CBAM.png)
-
-## Highlights
-
-### YOLOv4 (attentive YOLOv4 and Mobilenet-YOLOv4) with some useful module
-This repo is simple to use,easy to read and uncomplicated to improve compared with others!!!
+This is a based on [argusswift/YOLOv4-pytorch](https://github.com/argusswift/YOLOv4-pytorch).
 
 ## Environment
 
 * Nvida GeForce RTX 2080TI
-* CUDA10.0
+* CUDA10.1
 * CUDNN7.0
-* windows or linux
-* python 3.6
+* Ubuntu
+* Python 3.6 Anaconda Inc.
 
----
-## Brief
-* [x] CoordAttention([CVPR2021](https://arxiv.org/abs/2103.02907))(torch>=1.4)
-* [x] DO-Conv([arxiv2020](https://arxiv.org/abs/2006.12030))(torch>=1.2)
-* [x] Attention
-* [x] fp_16 training
-* [x] Mish
-* [x] Custom data
-* [x] Data Augment (RandomHorizontalFlip, RandomCrop, RandomAffine, Resize)
-* [x] Multi-scale Training (320 to 640)
-* [x] focal loss
-* [x] CIOU
-* [x] Label smooth
-* [x] Mixup
-* [x] cosine lr
 
 ---
 ## Install dependencies
