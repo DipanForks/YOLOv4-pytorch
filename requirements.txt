@@ -5,4 +5,4 @@ argparse
 tensorboardX
 pickleshare==0.7.5
 pycocotools
-
+mmcv
