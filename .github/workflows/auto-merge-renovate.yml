@@ -2,9 +2,10 @@ name: renovate
 
 on: pull_request
 
-jobs:
-  auto-merge:
-    - uses: KeisukeYamashita/auto-renovate-pull-request-merge@v1
-      with:
-        intervalSeconds: 10
-        timeoutSeconds: 30
+jobs:  
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: mansagroup/renovate-merge-action@v2
+        with:
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
