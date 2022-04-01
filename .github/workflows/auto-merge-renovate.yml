@@ -6,6 +6,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: mansagroup/renovate-merge-action@v2
+      - uses: mansagroup/renovate-merge-action@v0
         with:
           githubToken: ${{ secrets.GITHUB_TOKEN }}
