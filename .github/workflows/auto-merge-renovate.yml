@@ -1,0 +1,19 @@
+name: renovate
+
+on:
+  - push
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - uses: Djiit/action-renovate@master
+        with:
+          args: >
+            ${{ github.repository }}
+          # --more-args
+        env:
+          RENOVATE_TOKEN: ${{ secrets.RENOVATE_TOKEN }}
