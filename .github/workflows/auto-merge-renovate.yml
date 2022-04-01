@@ -1,19 +1,22 @@
 name: renovate
 
-on:
-  - push
+on: pull_request
 
 jobs:
-  run:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-
-      - uses: Djiit/action-renovate@master
+      - uses: KeisukeYamashita/auto-renovate-pull-request-merge@v1
         with:
-          args: >
-            ${{ github.repository }}
-          # --more-args
-        env:
-          RENOVATE_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+  automerge:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+    steps:
+      - uses: KeisukeYamashita/auto-renovate-pull-request-merge@v1
+        with:
+          intervalSeconds: 10
+          timeoutSeconds: 30
