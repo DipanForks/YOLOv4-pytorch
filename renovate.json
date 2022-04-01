@@ -1,28 +1,28 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": [
-    "config:base"
-  ],
-  "prHourlyLimit": 0,
-  "separateMinorPatch": true,
-  "packageRules": [
+  "automerge": true,
+  "extends": ["config:base"],
+  "ignoreDeps": ["herpism"],
+  "major": {
+    "stabilityDays": 14
+  },
+  "minor": {
+    "stabilityDays": 7
+  },
+    "packageRules": [
     {
-      "depTypeList": ["devDependencies"],
-      "updateTypes": ["patch"],
-      "groupName": "devDependencies",
-      "automerge": true
-    },
-    {
-      "depTypeList": ["devDependencies"],
-      "updateTypes": ["minor"],
-      "groupName": "devDependencies",
-      "automerge": true
-    },
-    {
-      "depTypeList": ["dependencies"],
-      "updateTypes": ["patch"],
-      "groupName": "Dependencies",
-      "automerge": true
+      "allowedVersions": "/^(12|14|16)\\./",
+      "groupName": "Node.js",
+      "matchPackageNames": ["node"]
     }
-  ]
+  ],
+  "patch": {
+    "groupName": "dependencies (patch)",
+    "groupSlug": "patch",
+    "stabilityDays": 3
+  },
+  "platformAutomerge": true,
+  "prCreation": "not-pending",
+  "separateMultipleMajor": true,
+  "timezone": "Asia/Tokyo",
+  "updateInternalDeps": true
 }
