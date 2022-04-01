@@ -1,4 +1,4 @@
-name: renovate
+name: Renovate
 
 on: [push, pull_request]
          
@@ -9,7 +9,6 @@ jobs:
       - uses: mansagroup/renovate-merge-action@v0
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
 
   automerge:
     needs: build
