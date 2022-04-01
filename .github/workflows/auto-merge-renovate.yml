@@ -3,20 +3,8 @@ name: renovate
 on: pull_request
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: KeisukeYamashita/auto-renovate-pull-request-merge@v1
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-  automerge:
-    needs: build
-    runs-on: ubuntu-latest
-    permissions:
-      pull-requests: write
-      contents: write
-    steps:
-      - uses: KeisukeYamashita/auto-renovate-pull-request-merge@v1
-        with:
-          intervalSeconds: 10
-          timeoutSeconds: 30
+  auto-merge:
+    - uses: KeisukeYamashita/auto-renovate-pull-request-merge@v1
+      with:
+        intervalSeconds: 10
+        timeoutSeconds: 30
