@@ -8,7 +8,7 @@ permissions:
   pull-requests: write
   contents: write
 steps:
-  - uses: fastify/github-action-merge-dependabot@v3.0.0
+  - uses: fastify/github-action-merge-dependabot@v3.0.2
     with:
       github-token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -21,6 +21,6 @@ steps:
       contents: write
 
     steps:
-      - uses: fastify/github-action-merge-dependabot@v3.0.0
+      - uses: fastify/github-action-merge-dependabot@v3.0.2
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
