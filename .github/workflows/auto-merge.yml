@@ -1,5 +1,10 @@
 name: CI
-on: [push, pull_request]
+
+on:
+  workflow_dispatch:
+    inputs:
+      pr-number:
+        required: true
 
 jobs:
   build:
@@ -15,12 +20,11 @@ steps:
   automerge:
     needs: build
     runs-on: ubuntu-latest
-
     permissions:
       pull-requests: write
       contents: write
-
     steps:
-      - uses: fastify/github-action-merge-dependabot@v3.0.2
+      - uses: fastify/github-action-merge-dependabot@main
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
+          pr-number: ${{ github.event.inputs.pr-number }}
