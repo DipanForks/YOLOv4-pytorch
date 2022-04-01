@@ -1,11 +1,22 @@
 name: renovate
 
-on: pull_request
-
-jobs:  
+on: [push, pull_request]
+         
+jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: mansagroup/renovate-merge-action@v0
         with:
-          githubToken: ${{ secrets.GITHUB_TOKEN }}
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+  automerge:
+    needs: build
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+      contents: write
+    steps:
+      - uses: mansagroup/renovate-merge-action@main
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
