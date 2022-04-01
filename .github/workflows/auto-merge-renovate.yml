@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: mansagroup/renovate-merge-action@v0
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
 
   automerge:
     needs: build
@@ -19,4 +19,4 @@ jobs:
     steps:
       - uses: mansagroup/renovate-merge-action@main
         with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+          githubToken: ${{ secrets.GITHUB_TOKEN }}
